@@ -125,7 +125,7 @@ function M._load(options)
 		['Structure'] = { fg = p.foam },
 		['Tag'] = { fg = p.foam },
 		['Todo'] = { fg = p.iris },
-		['Type'] = { fg = p.text },
+		['Type'] = { fg = p.foam },
 		['Typedef'] = { link = 'Type' },
 		['Underlined'] = { underline = true },
 
@@ -217,7 +217,7 @@ function M._load(options)
 		['@constant.builtin'] = { fg = p.love },
 		['@constant.macro'] = { link = '@constant' },
 		['@constructor'] = { fg = p.foam },
-		['@field'] = { fg = p.foam },
+		['@field'] = { fg = p.text },
 		['@function'] = { link = 'Function' },
 		['@function.builtin'] = { fg = p.love },
 		['@function.macro'] = { link = '@function' },
