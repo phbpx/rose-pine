@@ -18,7 +18,7 @@ function M._load(options)
 	) or maybe.base
 
 	local float_background = options.dim_nc_background
-			and (options.disable_float_background and groups.panel_nc or groups.panel)
+		and (options.disable_float_background and groups.panel_nc or groups.panel)
 		or maybe.surface
 
 	M.defaults = {
@@ -125,7 +125,7 @@ function M._load(options)
 		['Structure'] = { fg = p.foam },
 		['Tag'] = { fg = p.foam },
 		['Todo'] = { fg = p.iris },
-		['Type'] = { fg = p.foam },
+		['Type'] = { fg = p.text },
 		['Typedef'] = { link = 'Type' },
 		['Underlined'] = { underline = true },
 
@@ -303,7 +303,7 @@ function M._load(options)
 		['LspReferenceWrite'] = { bg = p.highlight_med },
 
 		-- lsp-highlight-codelens
-		['LspCodeLens'] = { fg = p.subtle }, -- virtual text of code len
+		['LspCodeLens'] = { fg = p.subtle },            -- virtual text of code len
 		['LspCodeLensSeparator'] = { fg = p.highlight_high }, -- separator between two or more code len
 
 		-- romgrk/barbar.nvim
@@ -603,10 +603,10 @@ function M._load(options)
 		local default_opts = M.defaults[group]
 
 		if (opts.inherit == nil or opts.inherit) and default_opts ~= nil then -- On merge.
-			opts.inherit = nil -- Don't add this key to the highlight_group after merge.
+			opts.inherit = nil                                          -- Don't add this key to the highlight_group after merge.
 			M.defaults[group] = vim.tbl_extend('force', default_opts, opts)
-		else -- On overwrite.
-			opts.inherit = nil -- Don't add this key to the highlight_group.
+		else                                                            -- On overwrite.
+			opts.inherit = nil                                          -- Don't add this key to the highlight_group.
 			M.defaults[group] = opts
 		end
 	end
